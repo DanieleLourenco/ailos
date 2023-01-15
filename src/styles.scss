@@ -1,1 +1,102 @@
 /* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+@import "@angular/material/theming";
+@include mat.core();
+@import "src/assets/style/variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+$custom-app-primary: mat.define-palette(mat.$blue-palette);
+$custom-app-secondary: mat.define-palette(mat.$indigo-palette, A200, A400, 700);
+$custom-app-warning: mat.define-palette(mat.$red-palette);
+
+$custom-theme: mat.define-light-theme(
+  $custom-app-primary,
+  $custom-app-secondary,
+  $custom-app-warning
+);
+
+@include mat.all-component-themes($custom-theme);
+@include mat.button-theme($custom-theme);
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background-color: $ailos-gray-1;
+}
+* {
+  font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
+}
+.mat-list-item .mat-list-item-content {
+  padding: 0px !important;
+}
+.mt-15 {
+  margin-top: 15px;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.mt-30 {
+  margin-top: 30px;
+}
+.mt-50 {
+  margin-top: 50px;
+}
+.ml-15 {
+  margin-left: 15px;
+}
+.mx-20{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.mat-step-header .mat-step-icon-selected {
+  background-color: transparent !important;
+  color: transparent !important;
+  border: 2px solid $ailos-primary;
+}
+
+.mat-stepper-horizontal,
+.mat-stepper-vertical {
+  background-color: transparent;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+.mat-step-header .mat-step-label.mat-step-label-active {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  color: $ailos-gray-4;
+}
+.mat-step-header .mat-step-label.mat-step-label-active.mat-step-label-selected {
+  color: $ailos-primary;
+}
+.mat-stepper-label-position-bottom
+  .mat-horizontal-stepper-header
+  .mat-step-label {
+  padding: 14px 0 0 0;
+}
+.mat-step-header .mat-step-icon {
+  background-color: $ailos-gray-2;
+  color: transparent;
+}
+.mat-stepper-label-position-bottom .mat-horizontal-stepper-header .mat-step-icon {
+  margin-right: 0;
+  width: 18px;
+  height: 18px;
+  margin-left: 0;
+}

@@ -1,0 +1,13 @@
+<mat-sidenav-container>
+  <mat-sidenav class="sidenav" mode="over" opened fixedInViewport="true">
+    <mat-nav-list>
+      <img class="avatar" src="/assets/img/logo-ailos-white.png" />
+    </mat-nav-list>
+    <mat-nav-list class="mt-30">
+      <a mat-list-item class="mt-15" *ngFor="let menuItem of menuItems">
+        <mat-icon >{{menuItem.title | icons}} </mat-icon>
+        <p class="mat-sidenav-text">{{menuItem.title}}</p>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+</mat-sidenav-container>

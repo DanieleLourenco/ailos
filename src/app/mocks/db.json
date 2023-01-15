@@ -1,0 +1,36 @@
+{
+  "cooperado": [
+    {
+      "id": 1,
+      "cpf": 39144951892,
+      "nome": "Daniele Fernanda Lourenço",
+      "situacaoCpf": "Regular",
+      "contaAplicacaoNumero": 5579323,
+      "contaCorrenteNumero": 7784614
+    },
+    {
+      "id": 2,
+      "cpf": 39144951891,
+      "nome": "Izadora Lourenço",
+      "situacaoCpf": "Regular",
+      "contaAplicacaoNumero": 5579323,
+      "contaCorrenteNumero": 7784614
+    },
+    {
+      "id": 3,
+      "cpf": 39144951893,
+      "nome": "Maria Fernanda Lourenço",
+      "situacaoCpf": "Regular",
+      "contaAplicacaoNumero": 5579323,
+      "contaCorrenteNumero": 7784614
+    },
+    {
+      "id": 4,
+      "cpf": 19144951892,
+      "nome": "Fabiana dos Santos",
+      "situacaoCpf": "Regular",
+      "contaAplicacaoNumero": 5579323,
+      "contaCorrenteNumero": 7784614
+    }
+  ]
+}

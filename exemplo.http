@@ -1,0 +1,40 @@
+http://localhost:3000/cooperado
+
+###
+GET http://localhost:3000/cooperado/1
+
+###
+POST http://localhost:3000/cooperado HTTP/1.1
+content-type: application/json
+
+{
+      "id": 4,
+      "cpf": 39133399987,
+      "nome": "Joana Santos",
+      "situacaoCpf": "Regular"
+}
+
+###
+PUT http://localhost:3000/cooperado HTTP/1.1
+content-type: application/json
+
+{
+      "id": 4,
+      "cpf": 39133399987,
+      "nome": "Joana Santos",
+      "situacaoCpf": "Regular"
+}
+
+###
+POST http://localhost:3000/cooperado HTTP/1.1
+content-type: application/json
+
+{
+      "id": 4,
+      "cpf": 39133399987,
+      "nome": "Joana Santos",
+      "situacaoCpf": "Regular"
+}
+
+###
+DELETE http://localhost:3000/cooperado/4

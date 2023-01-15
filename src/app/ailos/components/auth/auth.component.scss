@@ -1,0 +1,116 @@
+@import "src/assets/style/variables.scss";
+
+mat-card {
+  padding: 15px;
+  width: 270px;
+  height: 183px;
+  background: #fff;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+}
+label {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+.auth-button {
+  background: $ailos-primary;
+  border-radius: 2px;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 6px 25px;
+  margin-top: 20px;
+}
+.auth-button-secondary {
+  background: #fff;
+  border: 1.5px solid $ailos-primary !important;
+  color: $ailos-primary;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 15px 0;
+}
+.auth-stepper {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.auth-title {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
+  color: $ailos-black;
+}
+.auth-subtitle {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #4f575e;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.auth-card-btn {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  color: $ailos-primary;
+}
+
+.auth-card-title {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  color: $ailos-black;
+}
+.auth-card-subtitle {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  /* Cor texto sutil */
+  color: #787878;
+}
+.auth-card-title-sub {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 15px;
+  color: #787878;
+}
+.auth-card-subtitle-sub {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: $ailos-black;
+}
+footer {
+  background-color: #fff;
+  /* margin-top: 8px; */
+  display: flex;
+  align-items: center;
+  /* line-height: 20px; */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+

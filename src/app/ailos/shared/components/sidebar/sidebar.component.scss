@@ -1,0 +1,149 @@
+@import "/src/assets/style/variables.scss";
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+
+mat-icon {
+  position: relative;
+  display: table-cell;
+  width: 60px;
+  height: 36px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 25px;
+  color: #fff;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+.sidenav {
+  background-color: $ailos-primary;
+  height: 100%;
+  left: 0;
+  width: 60px;
+  overflow: hidden;
+  -webkit-transition: width 0.05s linear;
+  transition: width 0.05s linear;
+  -webkit-transform: translateZ(0) scale(1, 1);
+  z-index: 1000;
+}
+.sidenav:hover,
+mat-sidemat-sidenav.sidemat-sidenav.expanded {
+  width: 250px;
+  overflow: visible;
+}
+mat-list-item-content:hover{
+  color: red !important;
+  background-color: aqua;
+
+}
+mat-nav-list a:focus{
+  color: red !important;
+
+}
+mat-ripple mat-list-item-ripple{
+  color: red !important;
+
+}
+.sidenav a:hover,
+.dropdown-btn:hover {
+  color: red !important;
+}
+.sidenav > ul {
+  margin: 7px 0;
+}
+
+.sidenav mat-nav-list {
+  position: relative;
+  display: block;
+  width: 250px;
+}
+
+.sidenav mat-nav-list > a {
+  position: relative;
+  display: table;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: #999;
+  font-family: arial;
+  font-size: 14px;
+  text-decoration: none;
+  -webkit-transform: translateZ(0) scale(1, 1);
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+
+.sidenav .mat-sidenav-icon {
+  position: relative;
+  display: table-cell;
+  width: 60px;
+  height: 36px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 18px;
+}
+
+.sidenav .mat-sidenav-text {
+  // line-height: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+  /* margin: 0 0 0 45px; */
+  color: #fff;
+}
+
+.no-touch .scrollable.hover {
+  overflow-y: hidden;
+}
+
+.no-touch .scrollable.hover:hover {
+  overflow-y: auto;
+  overflow: visible;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+.sidenav li:hover > a,
+mat-sidenav.sidenav mat-nav-list.active > a,
+.dropdown-menu > mat-nav-list > a:hover,
+.dropdown-menu > mat-nav-list > a:focus,
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus,
+.no-touch .dashboard-page mat-sidenav.dashboard-menu ul li:hover a,
+.dashboard-page mat-sidenav.dashboard-menu ul mat-nav-list.active a {
+  color: #fff;
+  background-color: #165c7d;
+}
+.avatar {
+  // width: 110px;
+  //   /* height: 59px; */
+  //   overflow: hidden;
+  //   border-radius: 50%;
+  //   margin-right: 5px;
+  /* position: absolute; */
+  /* width: 60px; */
+  /* left: 20px; */
+  /* top: 19px; */
+  position: relative;
+  /* display: inherit; */
+  width: 62%;
+  height: 60%;
+}
+.logo-img {
+  width: 40px;
+  display: inline-block;
+  max-height: 30px;
+  margin-right: 10px;
+
+  img {
+    width: 45px;
+    padding: 0 7px;
+    top: 11px;
+    position: absolute;
+  }
+}

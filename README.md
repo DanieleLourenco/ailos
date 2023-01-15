@@ -1,27 +1,25 @@
-# Ailos
+# Teste Ailos
+Este é o resultado do desafio Angular proposto pela Ailos, onde desenvolve uma aplicação que consome a API do db.json e exibi os dados usando o design proposto, com o intuito total de ensinar os expectadores.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.4.
+## Executar a aplicação.
+Para executar a aplicação, execute os seguintes comando no terminal:
+# RequestsHttp
+json-server --watch db.json
 
 ## Development server
-
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Resultado final:
+<img src="https://github.com/cristianWilliam/Spotify-Angular/blob/master/readme-image/Readme%20Image.png" width="600px"/>
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+
+
+
