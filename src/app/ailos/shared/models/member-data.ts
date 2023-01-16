@@ -1,5 +1,4 @@
 export interface MemberData {
-
       id?: number;
       cpf: number;
       nome: string;

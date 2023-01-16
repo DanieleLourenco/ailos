@@ -10,13 +10,14 @@ import { IAuthService } from './auth.service.interface';
   providedIn: 'root',
 })
 export class AuthService implements IAuthService {
-
   private readonly API = `${environment.baseUrl}/cooperado/`;
 
   constructor(private httpClient: HttpClient) {}
 
-  getMemberData(cpf: number): Observable<MemberData>{
-    return this.httpClient.get<MemberData>(`${this.API}/?cpf=${cpf}`);
+  getMemberData(cpf: number): Observable<MemberData> {
+    return this.httpClient.get<MemberData>(`${this.API}/?cpf=${cpf}`).pipe(
+      first(),
+      tap(console.log)
+    );
   }
-
 }

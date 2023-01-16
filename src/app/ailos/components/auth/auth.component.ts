@@ -25,6 +25,7 @@ export class AuthComponent implements OnInit {
   validationForm!: FormGroup;
 
   memberData$!: Observable<MemberData[]>;
+
   memberData!: MemberData;
 
   constructor(private authService: AuthService, public dialog: MatDialog) {
