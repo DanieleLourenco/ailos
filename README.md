@@ -14,7 +14,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Resultado final:
-<img src="https://github.com/cristianWilliam/Spotify-Angular/blob/master/readme-image/Readme%20Image.png" width="600px"/>
+<img width="944" alt="teste-ailos" src="https://user-images.githubusercontent.com/44852163/212582878-9c6f29ce-cad8-40f9-8ec9-8afdd83618fa.PNG">
 
 
 
