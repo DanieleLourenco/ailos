@@ -1,12 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+
+import {
+  AbstractControl,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+
 import { MatDialog } from '@angular/material/dialog';
-import { catchError, Observable, of } from 'rxjs';
 
 import { ErrorDialogComponent } from './../../shared/components/error-dialog/error-dialog.component';
-import { IAuth } from './../../shared/Interfaces/IAuth';
-import { Auth } from './../../shared/models/auth';
-import { MemberData } from './../../shared/models/member-data';
+import { MemberData } from '../../shared/models/member-data';
 import { AuthService } from './../../shared/services/auth.service';
+import { catchError, Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-auth',
@@ -14,59 +20,42 @@ import { AuthService } from './../../shared/services/auth.service';
   styleUrls: ['./auth.component.scss'],
 })
 export class AuthComponent implements OnInit {
-  cpf!: number;
+  public isLoading = false;
+  public cpf!: number;
+  validationForm!: FormGroup;
 
-  dadosUsuario: any[] = [];
-  public usuario!: IAuth;
-  auth: Auth[] = [];
-  public loading!: boolean;
-
-  // memberDataa$: Observable<MemberData>;
+  memberData$!: Observable<MemberData[]>;
   memberData!: MemberData;
-  testeRetorno$!: Observable<MemberData[]>;
 
   constructor(private authService: AuthService, public dialog: MatDialog) {
-    // this.memberDataa$ = this.authService.teste(39144951892).pipe(
-    //   catchError((error) => {
-    //     this.openError('Erro ao carregar dados');
-    //     console.log(error);
-    //     return of([]);
-    //   })
-    // );
+    this.validationForm = new FormGroup({
+      cpf: new FormControl(null, Validators.required),
+    });
   }
+
+  ngOnInit(): void {
+    this.validationForm = new FormGroup({
+      cpf: new FormControl('', Validators.required),
+    });
+  }
+
+  // get cpf(): AbstractControl {
+  //   return this.validationForm.get('cpf')!;
+  // }
+
+  getUser(cpf: any): void {
+    console.log('data');
+    this.isLoading = true;
+    let cpfCooperado = cpf.replace(/\D/g, '');
+    this.authService
+      .getMemberData(cpfCooperado)
+      .subscribe((data) => (this.memberData = data));
+    this.isLoading = false;
+  }
+
   openError(errorMessage: string) {
     this.dialog.open(ErrorDialogComponent, {
       data: errorMessage,
     });
   }
-  ngOnInit(): void {
-    //  this.authService.teste().subscribe(r => this.memberData = r)
-    // this.memberDataa$ = this.authService.teste();
-  }
-  // showValue(field: any) {
-  //   let withoutMask = '';
-  //   console.log(field);
-  //   console.log('cpf');
-  //   if (field) {
-  //     withoutMask = field.replace(/\D+/g, '');
-  //   }
-  //   alert(
-  //     'Valor da variável: "' +
-  //       field +
-  //       '". Apenas números: "' +
-  //       withoutMask +
-  //       '"'
-  //   );
-  // }
-
-  getData(cpf: any): void {
-    this.loading = true;
-    let cpfCooperado = cpf.replace(/\D/g, '');
-    this.authService
-      .getUser(cpfCooperado)
-      .subscribe((res) => (this.memberData = res));
-      this.loading = true;
-
-    }
-
 }

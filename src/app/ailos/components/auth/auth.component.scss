@@ -13,6 +13,10 @@ label {
   font-weight: 600;
   font-size: 14px;
 }
+.auth-container {
+  padding: 16px 0;
+
+}
 .auth-button {
   background: $ailos-primary;
   border-radius: 2px;
@@ -28,6 +32,16 @@ label {
   background: #fff;
   border: 1.5px solid $ailos-primary !important;
   color: $ailos-primary;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 15px 0;
+}
+.auth-button-secondary-p {
+  background: $ailos-primary;
+  border: 1.5px solid $ailos-primary !important;
+  color: #fff;
   font-family: "Open Sans", sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -103,14 +117,37 @@ label {
   line-height: 19px;
   color: $ailos-black;
 }
+.auth-card-info {
+  margin-left: 23px;
+}
+.auth-card-icon-person {
+  color: #889499;
+  margin: 5px -18px;
+}
+.auth-card-icon {
+  color: #889499;
+  margin: 5px -18px;
+}
+.auth-card-icon-check {
+  color: #00c246;
+  margin: 5px -18px;
+}
 footer {
   background-color: #fff;
-  /* margin-top: 8px; */
+   margin-top: 8px;
   display: flex;
-  align-items: center;
-  /* line-height: 20px; */
+   align-items: center;
+   line-height: 20px;
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+.mx-20{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.px{
+  margin: 0 90px;
 }
 

@@ -1,55 +1,22 @@
-import { environment } from './../../../../environments/environment';
-import { MemberData } from './../models/member-data';
 import { HttpClient } from '@angular/common/http';
-import { EventEmitter, Injectable } from '@angular/core';
-import { delay, first, tap, Observable, finalize } from 'rxjs';
-import { Auth } from '../models/auth';
+import { Injectable } from '@angular/core';
+import { filter, find, first, from, map, Observable, tap } from 'rxjs';
+
+import { environment } from './../../../../environments/environment';
+import { MemberData } from '../models/member-data';
+import { IAuthService } from './auth.service.interface';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthService {
-  // private readonly API = `${environment.API}cooperado?cpf=`;
-  private readonly API = `${environment.baseUrl}/cooperado`;
-  private testeUrl = 'api/cooperado';
+export class AuthService implements IAuthService {
 
-  private usuarioAutenticado: boolean = false;
-  mostrarMenuEmitter = new EventEmitter<boolean>();
-
-  loading = false;
+  private readonly API = `${environment.baseUrl}/cooperado/`;
 
   constructor(private httpClient: HttpClient) {}
 
-  teste(cpf: any) {
-    return this.httpClient.get<MemberData[]>(this.API + `${cpf}`).pipe(
-      first(),
-      delay(2000),
-      tap((r) => console.log(r))
-    );
+  getMemberData(cpf: number): Observable<MemberData>{
+    return this.httpClient.get<MemberData>(`${this.API}/?cpf=${cpf}`);
   }
 
-  getUser(id: number): Observable<MemberData> {
-    this.loading = true;
-    return this.httpClient.get<MemberData>(`${this.API}/${id}`).pipe(
-      first(),
-      finalize(() => (this.loading = false))
-    );
-  }
-  // getDados(){
-  //   const dadosUsuario = of()
-  // }
-
-  // fazerLogin(cpf: Auth) {
-  //   if (cpf.cpf === 1234) {
-  //     this.mostrarMenuEmitter.emit(true);
-  //     this.usuarioAutenticado = true;
-  //     console.log('foiii');
-  //   } else {
-  //     this.mostrarMenuEmitter.emit(false);
-  //     this.usuarioAutenticado = false;
-  //   }
-  // }
-  // usuarioEstaAutenticado() {
-  //   return this.usuarioAutenticado;
-  // }
 }

@@ -1,21 +1,50 @@
 # Teste Ailos
-Este é o resultado do desafio Angular proposto pela Ailos, onde desenvolve uma aplicação que consome a API do db.json e exibi os dados usando o design proposto, com o intuito total de ensinar os expectadores.
+Este é o resultado do desafio Teste feito em Angular proposto pela Ailos, onde criei uma aplicação que consome a API Json Server e exibe os dados usando o design proposto. No arquivo `exemplo.http` é possível criar novos usuários.
 
 ## Executar a aplicação.
-Para executar a aplicação, execute os seguintes comando no terminal:
-# RequestsHttp
-json-server --watch db.json
-
+Para executar a aplicação, abra dois terminais e execute os seguintes comandos:
+## RequestsHttp
+`npm run backend`.
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Mocks.js
+{
+      "id": 1,
+      "cpf": 39144951892,
+      "nome": "Erica Lourenço",
+      "situacaoCpf": "Regular",
+      "contaAplicacaoNumero": 5579323,
+      "contaCorrenteNumero": 7784614
+    },
+    {
+      "id": 2,
+      "cpf": 92977980040,
+      "nome": "Marcelo Santos",
+      "situacaoCpf": "Regular",
+      "contaAplicacaoNumero": 5579323,
+      "contaCorrenteNumero": 7784614
+    },
+    {
+      "id": 3,
+      "cpf": 49759434091,
+      "nome": "Sueli Augusto Flores",
+      "situacaoCpf": "Regular",
+      "contaAplicacaoNumero": 5579323,
+      "contaCorrenteNumero": 7784614
+    },
+    {
+      "id": 4,
+      "cpf": 54884875060,
+      "nome": "Monique  Santana",
+      "situacaoCpf": "Regular",
+      "contaAplicacaoNumero": 5579323,
+      "contaCorrenteNumero": 7784614
+    }
 
 ## Resultado final:
-<img src="https://github.com/cristianWilliam/Spotify-Angular/blob/master/readme-image/Readme%20Image.png" width="600px"/>
 
+<img width="944" alt="teste-ailos" src="https://user-images.githubusercontent.com/44852163/212582878-9c6f29ce-cad8-40f9-8ec9-8afdd83618fa.PNG" width="600px"/>
 
 
 

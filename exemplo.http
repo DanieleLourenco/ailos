@@ -4,14 +4,19 @@ http://localhost:3000/cooperado
 GET http://localhost:3000/cooperado/1
 
 ###
+GET http://localhost:3000/cooperado/?cpf=92977980040
+
+###
 POST http://localhost:3000/cooperado HTTP/1.1
 content-type: application/json
 
 {
-      "id": 4,
-      "cpf": 39133399987,
-      "nome": "Joana Santos",
-      "situacaoCpf": "Regular"
+      "id": 2,
+      "cpf": 92977980040,
+      "nome": "Marcelo Santos",
+      "situacaoCpf": "Regular",
+      "contaAplicacaoNumero": 5579323,
+      "contaCorrenteNumero": 7784614
 }
 
 ###
@@ -19,10 +24,12 @@ PUT http://localhost:3000/cooperado HTTP/1.1
 content-type: application/json
 
 {
-      "id": 4,
-      "cpf": 39133399987,
-      "nome": "Joana Santos",
-      "situacaoCpf": "Regular"
+       "id": 2,
+      "cpf": 92977980040,
+      "nome": "Marcelo Santos",
+      "situacaoCpf": "Regular",
+      "contaAplicacaoNumero": 5579323,
+      "contaCorrenteNumero": 7784614
 }
 
 ###
@@ -30,10 +37,12 @@ POST http://localhost:3000/cooperado HTTP/1.1
 content-type: application/json
 
 {
-      "id": 4,
-      "cpf": 39133399987,
-      "nome": "Joana Santos",
-      "situacaoCpf": "Regular"
+      "id": 2,
+      "cpf": 92977980040,
+      "nome": "Marcelo Santos",
+      "situacaoCpf": "Regular",
+      "contaAplicacaoNumero": 5579323,
+      "contaCorrenteNumero": 7784614
 }
 
 ###

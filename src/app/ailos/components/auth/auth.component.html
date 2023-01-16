@@ -1,7 +1,5 @@
-<div class="container" style="padding: 16px 0;
-margin: 0 90px;">
+<div class="container auth-container">
   <div class="container-fluid">
-
     <div class="row">
       <div class="col-md-12 col-sm-12">
         <mat-horizontal-stepper labelPosition="bottom" class="auth-stepper">
@@ -16,7 +14,6 @@ margin: 0 90px;">
       <div class="col-md-7">
         <div class="header">
           <h4 class="auth-title">Informe o CPF do futuro cooperado (a)</h4>
-
           <p class="auth-subtitle">Se necessário, você poderá duplicar uma conta existente ou pausar e retomar este
             cadastro
             futuramente.
@@ -26,7 +23,6 @@ margin: 0 90px;">
         </div>
       </div>
     </div>
-
     <div class="row">
       <div class="col-md-8">
         <div class="content mt-15">
@@ -44,7 +40,7 @@ margin: 0 90px;">
             </div>
             <div class="col-md-6 col-sm-6 col-xs-6">
               <div class="form-group">
-                <button class="btn auth-button" type="submit" (click)="getData(cpf)">Consultar por CPF</button>
+                <button class="btn auth-button" type="submit" (click)="getUser(cpf)">Consultar por CPF</button>
               </div>
             </div>
           </form>
@@ -63,111 +59,110 @@ margin: 0 90px;">
       <label> {{memberData}}</label>
     </div> -->
 
-    <div>
-      <div *ngIf="  memberData; else loading">
-        <div class="row mt-30">
-          <div class="col-md-3 col-sm-3">
-            <mat-card>
-              <mat-card-header>
-                <mat-card-title class="auth-card-title">Situação cadastral do CPF</mat-card-title>
-                <mat-card-subtitle class="auth-card-subtitle">Consulta na Receita Federal</mat-card-subtitle>
-              </mat-card-header>
-              <mat-card-content>
-                <mat-list>
-                  <mat-card-header class="dani">
-                    <div>
-                      <mat-icon style="color:#889499; margin: 5px -18px;
-                    ">person</mat-icon>
-                    </div>
-                    <div style="margin-left: 23px;">
-                      <mat-card-title class="auth-card-title-sub">Nome</mat-card-title>
-                      <mat-card-subtitle class="auth-card-subtitle-sub">{{memberData.nome}}</mat-card-subtitle>
-                    </div>
-                  </mat-card-header>
-                  <mat-card-header>
-                    <div>
-                      <span class="material-symbols-outlined" style="color: #00C246;
-                    margin: 5px -18px;
-                    ">
-                        check_circle
-                      </span>
-                    </div>
-                    <div style="margin-left: 23px;">
-                      <mat-card-title class="auth-card-title-sub">Situação do CPF</mat-card-title>
-                      <mat-card-subtitle class="auth-card-subtitle-sub">{{memberData.situacaoCpf}}</mat-card-subtitle>
-                    </div>
-                  </mat-card-header>
-                </mat-list>
-              </mat-card-content>
-            </mat-card>
-          </div>
-          <div class="col-md-3 col-sm-3">
-            <mat-card>
-              <mat-card-header>
-                <mat-card-title class="auth-card-title">Conta aplicação</mat-card-title>
-                <mat-card-subtitle class="auth-card-subtitle">Cooperativa viacredi</mat-card-subtitle>
-              </mat-card-header>
-              <mat-card-content>
-                <mat-list>
-                  <mat-card-header class="dani">
-                    <div>
-                      <span style="color:#889499; margin: 5px -18px;
-                    " class="material-symbols-outlined">
-                        credit_card
-                      </span>
-                    </div>
-                    <div style="margin-left: 23px;">
-                      <mat-card-title class="auth-card-title-sub">Número da conta</mat-card-title>
-                      <mat-card-subtitle
-                        class="auth-card-subtitle-sub">{{memberData.contaAplicacaoNumero | card}}</mat-card-subtitle>
-                    </div>
-                  </mat-card-header>
-                </mat-list>
-                <mat-card-actions>
-                  <button class="auth-card-btn" mat-button>Duplicar conta</button>
-                </mat-card-actions>
-              </mat-card-content>
-            </mat-card>
-          </div>
-          <div class="col-md-3 col-sm-3">
-            <mat-card>
-              <mat-card-header>
-                <mat-card-title class="auth-card-title">Conta corrente</mat-card-title>
-                <mat-card-subtitle class="auth-card-subtitle">Cooperativa viacredi</mat-card-subtitle>
-              </mat-card-header>
-              <mat-card-content>
-                <mat-list>
-                  <mat-card-header class="dani">
-                    <div>
-                      <span style="color:#889499; margin: 5px -18px;
-                    " class="material-symbols-outlined">
-                        credit_card
-                      </span>
-                    </div>
-                    <div style="margin-left: 23px;">
-                      <mat-card-title class="auth-card-title-sub">Número da conta</mat-card-title>
-                      <mat-card-subtitle
-                        class="auth-card-subtitle-sub">{{memberData.contaCorrenteNumero | card}}</mat-card-subtitle>
-                    </div>
-                  </mat-card-header>
-                </mat-list>
-                <mat-card-actions>
-                  <button class="auth-card-btn" mat-button>Duplicar conta</button>
-                </mat-card-actions>
-              </mat-card-content>
-            </mat-card>
-          </div>
 
-          <!-- <footer class="footer" style="padding: 0 80px;">
-          <button mat-stroked-button class="auth-button-secondary">Dicas para admissão</button>
-        </footer> -->
+    <div *ngIf="!isLoading && memberData ">
+      <div class="row mt-30">
+        <div class="col-md-3 col-sm-3">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title class="auth-card-title">Situação cadastral do CPF</mat-card-title>
+              <mat-card-subtitle class="auth-card-subtitle">Consulta na Receita Federal</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-list>
+                <mat-card-header>
+                  <div>
+                    <mat-icon class="auth-card-icon-person">person</mat-icon>
+                  </div>
+                  <div class="auth-card-info">
+                    <mat-card-title class="auth-card-title-sub">Nome</mat-card-title>
+                    <mat-card-subtitle class="auth-card-subtitle-sub">{{memberData.nome}}</mat-card-subtitle>
+                  </div>
+                </mat-card-header>
+                <mat-card-header>
+                  <div>
+                    <span class="material-symbols-outlined auth-card-icon-check">
+                      check_circle
+                    </span>
+                  </div>
+                  <div class="auth-card-info">
+                    <mat-card-title class="auth-card-title-sub">Situação do CPF</mat-card-title>
+                    <mat-card-subtitle class="auth-card-subtitle-sub">{{memberData.situacaoCpf}}</mat-card-subtitle>
+                  </div>
+                </mat-card-header>
+              </mat-list>
+            </mat-card-content>
+          </mat-card>
         </div>
+        <div class="col-md-3 col-sm-3">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title class="auth-card-title">Conta aplicação</mat-card-title>
+              <mat-card-subtitle class="auth-card-subtitle">Cooperativa viacredi</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-list>
+                <mat-card-header class="dani">
+                  <div>
+                    <span class="material-symbols-outlined auth-card-icon">
+                      credit_card
+                    </span>
+                  </div>
+                  <div class="auth-card-info">
+                    <mat-card-title class="auth-card-title-sub">Número da conta</mat-card-title>
+                    <mat-card-subtitle class="auth-card-subtitle-sub">{{memberData.contaAplicacaoNumero |
+                      card}}</mat-card-subtitle>
+                  </div>
+                </mat-card-header>
+              </mat-list>
+              <mat-card-actions>
+                <button class="auth-card-btn" mat-button>Duplicar conta</button>
+              </mat-card-actions>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div class="col-md-3 col-sm-3">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title class="auth-card-title">Conta corrente</mat-card-title>
+              <mat-card-subtitle class="auth-card-subtitle">Cooperativa viacredi</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-list>
+                <mat-card-header class="dani">
+                  <div>
+                    <span class="material-symbols-outlined auth-card-icon">
+                      credit_card
+                    </span>
+                  </div>
+                  <div class="auth-card-info">
+                    <mat-card-title class="auth-card-title-sub">Número da conta</mat-card-title>
+                    <mat-card-subtitle class="auth-card-subtitle-sub">{{memberData.contaCorrenteNumero |
+                      card}}</mat-card-subtitle>
+                  </div>
+                </mat-card-header>
+              </mat-list>
+              <mat-card-actions>
+                <button class="auth-card-btn" mat-button>Duplicar conta</button>
+              </mat-card-actions>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+
       </div>
-      <ng-template #loading>
-        <!-- <mat-spinner class="loading-spinner"></mat-spinner> -->
-        <div class="row mt-50 mx-20">
-          <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-        </div>
-      </ng-template>
     </div>
+
+    <!-- <ng-template >
+      <div class="row mt-50 mx-20">
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </div>
+    </ng-template> -->
+  </div>
+
+  <div>
+    <footer class="bg-light text-center text-lg-start">
+      <button *ngIf="memberData" mat-stroked-button class="auth-button-secondary-p mx-20">Iniciar nova admissão</button>
+      <button mat-stroked-button class="auth-button-secondary">Dicas para admissão</button>
+    </footer>
   </div>
