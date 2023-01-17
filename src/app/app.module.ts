@@ -10,6 +10,8 @@ import { ToolbarComponent } from './ailos/shared/components/toolbar/toolbar.comp
 import { SharedModule } from './ailos/shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LayoutComponent } from './ailos/components/layout/layout.component';
+
 
 @NgModule({
   declarations: [
@@ -17,6 +19,7 @@ import { AppComponent } from './app.component';
     SidebarComponent,
     ToolbarComponent,
     AuthComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,

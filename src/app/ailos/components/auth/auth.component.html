@@ -1,5 +1,5 @@
-<div class="container auth-container">
-  <div class="container-fluid">
+<div>
+  <div class="container-fluid auth-container">
     <div class="row">
       <div class="col-md-12 col-sm-12">
         <mat-horizontal-stepper labelPosition="bottom" class="auth-stepper">
@@ -26,21 +26,22 @@
     <div class="row">
       <div class="col-md-8">
         <div class="content mt-15">
-          <form class="row ">
-            <div class="col-md-4 col-sm-6 col-xs-4">
+          <form [formGroup]="registerForm" (ngSubmit)="getUser(cpf)" class="display-flex">
+            <div class="mr-15 col-md-3 col-sm-6 col-xs-4">
               <label for="cpf">CPF</label>
-              <div class="input-group has-validation">
-                <input type="tel" class="form-control" [ngModel]="cpf | cpfMask: 'cpf'" (ngModelChange)="cpf=$event"
-                  appOnlyNumbers name="cpf" placeholder="000.000.000-00" maxlength="14"
-                  aria-describedby="inputGroupPrepend" required>
-                <div class="invalid-feedback">
+
+              <input [ngClass]="{'is-invalid':submitted && registerForm.controls.cpf.errors}" formControlName="cpf"
+                type="tel" class=" form-control" [ngModel]="cpf | cpfMask: 'cpf'" (ngModelChange)="cpf=$event"
+                appOnlyNumbers placeholder="000.000.000-00" maxlength="14">
+              <div *ngIf="submitted && registerForm.controls.cpf.errors" class="text-danger">
+                <div *ngIf="submitted && registerForm.controls.cpf.errors.required">
                   Informe um CPF válido
                 </div>
               </div>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="col-md-6 col-sm-6 col-xs-12">
               <div class="form-group">
-                <button class="btn auth-button" type="submit" (click)="getUser(cpf)">Consultar por CPF</button>
+                <button class="btn auth-button" type="submit">Consultar por CPF</button>
               </div>
             </div>
           </form>
@@ -58,8 +59,11 @@
     <!-- <div *ngIf=" memberDataa$ | async as memberData; else loading">
       <label> {{memberData}}</label>
     </div> -->
-
-
+    <div *ngIf="isLoading">
+      <div class="row mt-50 mx-20">
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </div>
+    </div>
     <div *ngIf="!isLoading && memberData ">
       <div class="row mt-30">
         <div class="col-md-3 col-sm-3">
@@ -148,21 +152,11 @@
             </mat-card-content>
           </mat-card>
         </div>
-
-
       </div>
     </div>
-
-    <!-- <ng-template >
-      <div class="row mt-50 mx-20">
-        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-      </div>
-    </ng-template> -->
   </div>
-
-  <div>
-    <footer class="bg-light text-center text-lg-start">
-      <button *ngIf="memberData" mat-stroked-button class="auth-button-secondary-p mx-20">Iniciar nova admissão</button>
-      <button mat-stroked-button class="auth-button-secondary">Dicas para admissão</button>
-    </footer>
-  </div>
+</div>
+<div class="auth-footer">
+  <button *ngIf="memberData" mat-stroked-button class="auth-button-secondary-p ">Iniciar nova admissão</button>
+  <button mat-stroked-button class="auth-button-secondary ">Dicas para admissão</button>
+</div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {
   AbstractControl,
+  FormBuilder,
   FormControl,
   FormGroup,
   Validators,
@@ -22,36 +23,48 @@ import { catchError, Observable, of } from 'rxjs';
 export class AuthComponent implements OnInit {
   public isLoading = false;
   public cpf!: number;
+  registerForm!: FormGroup;
+  submitted = false;
   validationForm!: FormGroup;
-
   memberData$!: Observable<MemberData[]>;
-
   memberData!: MemberData;
+  returnData: any;
 
-  constructor(private authService: AuthService, public dialog: MatDialog) {
-    this.validationForm = new FormGroup({
-      cpf: new FormControl(null, Validators.required),
-    });
-  }
+  constructor(
+    private authService: AuthService,
+    public dialog: MatDialog,
+    private formBuilder: FormBuilder
+  ) {}
 
   ngOnInit(): void {
-    this.validationForm = new FormGroup({
-      cpf: new FormControl('', Validators.required),
+    this.registerForm = this.formBuilder.group({
+      cpf: ['', [Validators.required, Validators.minLength(14)]],
     });
   }
 
-  // get cpf(): AbstractControl {
-  //   return this.validationForm.get('cpf')!;
-  // }
-
   getUser(cpf: any): void {
-    console.log('data');
-    this.isLoading = true;
-    let cpfCooperado = cpf.replace(/\D/g, '');
-    this.authService
-      .getMemberData(cpfCooperado)
-      .subscribe((data) => (this.memberData = data));
-    this.isLoading = false;
+    this.submitted = true;
+    console.log('oi');
+    if (this.registerForm.valid) {
+      let cpfCooperado = cpf.replace(/\D/g, '');
+      this.authService.getMemberData(cpfCooperado).subscribe((success) => {
+        this.returnData = success;
+        if (this.returnData.leght != 0) {
+          this.openError(
+            'O cpf ' +
+              cpf +
+              ' não foi encontrado, por favor verifique se o número digitado esta correto.'
+          );
+        }
+        this.memberData = this.returnData[0];
+
+      });
+    }
+    // let cpfCooperado = cpf.replace(/\D/g, '');
+    // this.authService
+    //   .getMemberData(cpfCooperado)
+    //   .subscribe((data) => (this.returnData = data));
+    // this.memberData = this.returnData[0];
   }
 
   openError(errorMessage: string) {

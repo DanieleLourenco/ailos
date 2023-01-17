@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthComponent } from './ailos/components/auth/auth.component';
+import { LayoutComponent } from './ailos/components/layout/layout.component';
 
 const routes: Routes = [
-  { path: '', component: AuthComponent },
+  { path: '', component: LayoutComponent },
   {
     path: '**',
-    redirectTo: 'auth',
+    redirectTo: 'layout',
   },
 ];
 @NgModule({
