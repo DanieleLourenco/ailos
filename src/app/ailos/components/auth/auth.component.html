@@ -1,4 +1,3 @@
-<div>
   <div class="container-fluid auth-container">
     <div class="row">
       <div class="col-md-12 col-sm-12">
@@ -26,7 +25,7 @@
     <div class="row">
       <div class="col-md-8">
         <div class="content mt-15">
-          <form [formGroup]="registerForm" (ngSubmit)="getUser(cpf)" class="display-flex">
+          <form [formGroup]="registerForm" (ngSubmit)="getMember(cpf)" class="display-flex">
             <div class="mr-15 col-md-3 col-sm-6 col-xs-4">
               <label for="cpf">CPF</label>
 
@@ -54,7 +53,7 @@
       </div>
     </div>
     <div *ngIf="!isLoading && memberData ">
-      <div class="row mt-30">
+      <div class="row mt-30 mb-30">
         <div class="col-md-3 col-sm-3">
           <mat-card>
             <mat-card-header>
@@ -144,8 +143,9 @@
       </div>
     </div>
   </div>
-</div>
-<div class="auth-footer">
-  <button *ngIf="memberData" mat-stroked-button class="auth-button-secondary-p ">Iniciar nova admissão</button>
-  <button mat-stroked-button class="auth-button-secondary ">Dicas para admissão</button>
-</div>
+  <div class="container-fluid auth-footer" >
+    <button *ngIf="memberData" mat-stroked-button class="auth-button-secondary-p ">Iniciar nova admissão</button>
+    <button mat-stroked-button class="auth-button-secondary ">Dicas para admissão</button>
+  </div>
+
+

@@ -1,13 +1,13 @@
 # Teste Ailos
-Este é o resultado do teste feito em Angular proposto pela Ailos, onde criei uma aplicação que consome a API Json Server e exibe os dados usando o design proposto. No ... tem arquivo `exemplo.http` nele é possível criar novos usuários.
+Este é o resultado do teste feito em Angular proposto pela Ailos, onde criei uma aplicação que consome uma API Json Server e exibe os dados usando o design proposto. Dentro da pasta `src` tem um arquivo `exemplo.http` nele é possível criar novos usuários que serão adicionados automaticamente na base de dados.
 
 ## Executar a aplicação.
 Para executar a aplicação, abra dois terminais e execute os seguintes comandos:
 ## RequestsHttp
-`npm run backend`.
+Execute `npm run backend`. Também é possivel navegar até `http://localhost:3000/cooperado`.
 ## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
+Execute `ng serve` para um servidor de desenvolvimento. Navegue até `http://localhost:4200/`.
 ## Mocks.js
 {
       "id": 1,
@@ -43,11 +43,13 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
     }
 
 ## Resultado final:
+CPF inserido não é valido
 
-<img width="944" alt="teste-ailos" src="https://user-images.githubusercontent.com/44852163/212582878-9c6f29ce-cad8-40f9-8ec9-8afdd83618fa.PNG" width="600px"/>
+<img width="960" alt="ailos-cpf-invalidat" src="https://user-images.githubusercontent.com/44852163/212986374-3f90ad45-51e1-4ee7-a0d8-33d6312fdb92.png"/>
 
+CPF válido 
 
-
+<img width="960" alt="ailos-data-cooperado" src="https://user-images.githubusercontent.com/44852163/212986233-c1cb6e4f-beb5-4b5e-b51c-22f6adeed39d.png"/>
 
 
 

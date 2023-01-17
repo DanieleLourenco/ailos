@@ -1,4 +1,4 @@
-@import 'variables.scss';
+@import "src/assets/style/variables.scss";
 
 .display-flex {
   display: flex;
@@ -40,7 +40,6 @@ label {
   font-size: 14px;
   margin: 20px;
   margin-left: 20px;
-
 }
 .auth-button-secondary-p {
   background: $ailos-primary;
@@ -141,7 +140,9 @@ label {
   margin-left: 20px;
   margin-right: 20px;
 }
-
+.mb-30{
+  margin-bottom: 100px;
+}
 .px {
   margin: 0 90px;
 }
@@ -150,9 +151,11 @@ label {
 }
 .auth-footer {
   background-color: #fff;
-  padding: 5px 50px;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
+  left: 0;
+  bottom: 0;
+  padding: 0px 50px;
   width: 100%;
+  margin-top: 16px;
+  position:fixed ;
+
 }

@@ -33,7 +33,7 @@ export class AuthComponent implements OnInit {
     });
   }
 
-  getUser(cpf: any): void {
+  getMember(cpf: any): void {
     this.submitted = true;
     if (this.registerForm.valid) {
       let cpfCooperado = cpf.replace(/\D/g, '');

@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
-@import 'variables.scss';
+@import "src/assets/style/variables.scss";
 
 .spacer {
   flex: 1 1 auto;
@@ -15,6 +15,7 @@
 }
 .mat-toolbar {
   background: #fff;
+  overflow: hidden;
 }
 .toolbar-title {
   font-family: "Exo 2", sans-serif;
