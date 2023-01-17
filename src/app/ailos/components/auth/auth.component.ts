@@ -1,19 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-
-import {
-  AbstractControl,
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { Observable } from 'rxjs';
 
-import { ErrorDialogComponent } from './../../shared/components/error-dialog/error-dialog.component';
 import { MemberData } from '../../shared/models/member-data';
+import { ErrorDialogComponent } from './../../shared/components/error-dialog/error-dialog.component';
 import { AuthService } from './../../shared/services/auth.service';
-import { catchError, Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-auth',
@@ -25,7 +17,6 @@ export class AuthComponent implements OnInit {
   public cpf!: number;
   registerForm!: FormGroup;
   submitted = false;
-  validationForm!: FormGroup;
   memberData$!: Observable<MemberData[]>;
   memberData!: MemberData;
   returnData: any;
@@ -44,27 +35,22 @@ export class AuthComponent implements OnInit {
 
   getUser(cpf: any): void {
     this.submitted = true;
-    console.log('oi');
     if (this.registerForm.valid) {
       let cpfCooperado = cpf.replace(/\D/g, '');
-      this.authService.getMemberData(cpfCooperado).subscribe((success) => {
-        this.returnData = success;
-        if (this.returnData.leght != 0) {
-          this.openError(
-            'O cpf ' +
-              cpf +
-              ' não foi encontrado, por favor verifique se o número digitado esta correto.'
-          );
-        }
-        this.memberData = this.returnData[0];
-
-      });
+      this.authService
+        .authenticateCooperated(cpfCooperado)
+        .subscribe((success) => {
+          this.returnData = success;
+          if (this.returnData == '' || this.returnData == null) {
+            this.openError(
+              'O cpf ' +
+                cpf +
+                ' não foi encontrado, por favor verifique se o número digitado esta correto.'
+            );
+          }
+          this.memberData = this.returnData[0];
+        });
     }
-    // let cpfCooperado = cpf.replace(/\D/g, '');
-    // this.authService
-    //   .getMemberData(cpfCooperado)
-    //   .subscribe((data) => (this.returnData = data));
-    // this.memberData = this.returnData[0];
   }
 
   openError(errorMessage: string) {

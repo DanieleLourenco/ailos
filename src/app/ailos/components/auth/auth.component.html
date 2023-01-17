@@ -48,17 +48,6 @@
         </div>
       </div>
     </div>
-
-    <!-- <div *ngIf=" memberDataa$ | async as memberData; else loading">
-      <div *ngFor="let item of memberDataa$ | async">
-        <label> {{item.cpf}}</label>
-        <label> {{item.nome}}</label>
-      </div>
-    </div> -->
-
-    <!-- <div *ngIf=" memberDataa$ | async as memberData; else loading">
-      <label> {{memberData}}</label>
-    </div> -->
     <div *ngIf="isLoading">
       <div class="row mt-50 mx-20">
         <mat-progress-bar mode="indeterminate"></mat-progress-bar>

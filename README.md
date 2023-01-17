@@ -1,5 +1,5 @@
 # Teste Ailos
-Este é o resultado do teste feito em Angular proposto pela Ailos, onde criei uma aplicação que consome a API Json Server e exibe os dados usando o design proposto. No arquivo `exemplo.http` é possível criar novos usuários.
+Este é o resultado do teste feito em Angular proposto pela Ailos, onde criei uma aplicação que consome a API Json Server e exibe os dados usando o design proposto. No ... tem arquivo `exemplo.http` nele é possível criar novos usuários.
 
 ## Executar a aplicação.
 Para executar a aplicação, abra dois terminais e execute os seguintes comandos:
